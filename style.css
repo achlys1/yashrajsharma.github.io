@@ -1,0 +1,52 @@
+/* 1. Smooth Scrolling - Makes jumping between sections feel premium */
+html {
+    scroll-behavior: smooth;
+}
+
+/* 2. Custom Scrollbar - Keeps the dark mode aesthetic consistent */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0f172a; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #6366f1; /* Indigo color when hovering */
+}
+
+/* 3. The "Glassmorphism" Effect - Perfect for your Likhakriti cards */
+.glass-card {
+    background: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 4. Text Gradient Animation - Makes your name/brand "breathe" */
+@keyframes gradient-flow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.animate-gradient {
+    background: linear-gradient(-45deg, #818cf8, #c084fc, #6366f1, #a855f7);
+    background-size: 400% 400%;
+    animation: gradient-flow 10s ease infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* 5. Hover Glow - Makes your project cards feel interactive */
+.hover-glow:hover {
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
+    transform: translateY(-5px);
+    transition: all 0.3s ease-in-out;
+}

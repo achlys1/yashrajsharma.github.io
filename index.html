@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yashraj Sharma | The Likhakriti Architect</title>
+    <title>Yashraj Sharma | Likhakriti.OS</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;600;800&family=Space+Mono&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
@@ -11,109 +11,92 @@
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
     
     <style>
-        :root { --neon: #00f2ff; --royal: #7000ff; }
-        body { background-color: #020617; color: #f8fafc; font-family: 'Plus Jakarta Sans', sans-serif; }
+        :root { --brand: #f59e0b; --deep: #020617; }
+        body { background-color: var(--deep); color: #f8fafc; font-family: 'Plus Jakarta Sans', sans-serif; }
         .mono { font-family: 'Space Mono', monospace; }
-        #canvas-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; opacity: 0.6; }
-        .glass { background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.1); }
-        .neon-border:hover { border-color: var(--neon); box-shadow: 0 0 20px rgba(0, 242, 255, 0.2); }
-        .gradient-text { background: linear-gradient(to right, #00f2ff, #7000ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        #canvas-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; opacity: 0.4; }
+        .glass { background: rgba(2, 6, 23, 0.7); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(245, 158, 11, 0.1); }
+        .neon-border:hover { border-color: var(--brand); box-shadow: 0 0 15px rgba(245, 158, 11, 0.2); }
+        .gradient-text { background: linear-gradient(to right, #f59e0b, #fbbf24); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     </style>
 </head>
 <body class="overflow-x-hidden">
 
     <div id="canvas-bg"></div>
 
-    <nav class="fixed top-0 w-full glass z-50 px-6 py-4 flex justify-between items-center border-b border-white/5">
-        <div class="text-2xl font-extrabold tracking-tighter gradient-text">LIKHAKRITI<span class="text-white">.OS</span></div>
-        <div class="hidden md:flex space-x-10 text-[11px] uppercase tracking-[0.2em] font-semibold">
-            <a href="#home" class="hover:text-cyan-400 transition">Start</a>
-            <a href="#about" class="hover:text-cyan-400 transition">About</a>
-            <a href="#experience" class="hover:text-cyan-400 transition">Experience</a>
-            <a href="#contact" class="hover:text-cyan-400 transition">Contact</a>
+    <nav class="fixed top-0 w-full glass z-50 px-6 py-3 flex justify-between items-center">
+        <div class="flex items-center space-x-3">
+            <img src="https://raw.githubusercontent.com/achlys1/yashrajsharma.github.io/main/image.png" class="w-10 h-10 rounded-lg shadow-lg shadow-amber-500/20" alt="Logo">
+            <div class="text-xl font-black tracking-tighter gradient-text">LIKHAKRITI<span class="text-white">.OS</span></div>
+        </div>
+        <div class="hidden md:flex space-x-10 text-[10px] uppercase tracking-[0.2em] font-bold">
+            <a href="#home" class="hover:text-amber-400 transition">Entry</a>
+            <a href="#about" class="hover:text-amber-400 transition">Bio</a>
+            <a href="#experience" class="hover:text-amber-400 transition">Logs</a>
+            <a href="mailto:sharma.yash62668@gmail.com" class="text-amber-500 border border-amber-500/50 px-4 py-1 rounded-md hover:bg-amber-500 hover:text-black transition">Contact</a>
         </div>
     </nav>
 
     <section id="home" class="h-screen flex flex-col justify-center items-center text-center px-4">
-        <div class="mb-6 p-1 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600">
-            <div class="bg-slate-950 rounded-full px-6 py-1 text-[10px] font-bold uppercase tracking-widest">System Online // Raipur</div>
-        </div>
-        <h1 class="text-5xl md:text-8xl font-black mb-4 tracking-tighter">YASHRAJ <span class="gradient-text">SHARMA</span></h1>
-        <div class="text-lg md:text-2xl mono text-cyan-100/60">
+        <h1 class="text-6xl md:text-9xl font-black mb-4 tracking-tighter italic">YASHRAJ <span class="gradient-text">SHARMA</span></h1>
+        <div class="text-lg md:text-2xl mono text-amber-100/60">
             > <span id="typed"></span>
         </div>
         
         <div class="flex space-x-6 mt-12">
-            <a href="https://github.com/achlys1" class="glass p-3 rounded-xl neon-border transition"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" class="w-6 invert" alt="GitHub"></a>
-            <a href="https://www.linkedin.com/in/likhakriti-60251b297" class="glass p-3 rounded-xl neon-border transition"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" class="w-6 invert" alt="LinkedIn"></a>
-            <a href="https://www.instagram.com/likhakriti?igsh=OXh1aHI0eGt2MDVn" class="glass p-3 rounded-xl neon-border transition"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" class="w-6 invert" alt="Instagram"></a>
+            <a href="https://github.com/achlys1" class="glass p-3 rounded-2xl neon-border transition"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" class="w-6 invert" alt="GitHub"></a>
+            <a href="https://www.linkedin.com/in/likhakriti-60251b297" class="glass p-3 rounded-2xl neon-border transition"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" class="w-6 invert" alt="LinkedIn"></a>
+            <a href="https://www.instagram.com/likhakriti" class="glass p-3 rounded-2xl neon-border transition"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" class="w-6 invert" alt="Instagram"></a>
         </div>
     </section>
 
     <section id="about" class="py-32 px-6 max-w-5xl mx-auto">
-        <div class="glass p-12 rounded-3xl relative overflow-hidden">
-            <div class="absolute top-0 right-0 p-8 opacity-10 font-black text-8xl italic">01</div>
-            <h2 class="text-4xl font-bold mb-8 italic">// The Architect</h2>
-            <p class="text-xl text-slate-300 leading-relaxed mb-6">
-                I am a 16-year-old developer and brand strategist currently decoding the intersection of **Artificial Intelligence** and **Creative Literature**. While the rest of the world sees stories, I see data structures and SEO algorithms.
+        <div class="glass p-12 rounded-[2rem] border-white/5 relative overflow-hidden">
+            <h2 class="text-4xl font-black mb-8 uppercase tracking-tighter text-amber-500">The Architect</h2>
+            <p class="text-xl text-slate-300 leading-relaxed mb-8">
+                I am a 16-year-old student from Raipur, India, currently engineering the future of digital literature through **Likhakriti**. I build Python-driven tools and optimize brand presence using data-backed SEO strategies.
             </p>
-            <div class="grid md:grid-cols-2 gap-6 mt-12">
-                <div class="p-6 rounded-2xl bg-white/5 border border-white/10">
-                    <h3 class="text-cyan-400 font-bold mb-2">Technical Core</h3>
-                    <p class="text-sm text-slate-400">Python, AWS (In-Prog), AI Logic, Git Ops.</p>
-                </div>
-                <div class="p-6 rounded-2xl bg-white/5 border border-white/10">
-                    <h3 class="text-purple-400 font-bold mb-2">Strategic Core</h3>
-                    <p class="text-sm text-slate-400">SEO Mastery, Brand Scaling, Chess Strategy (1390 Elo).</p>
-                </div>
+            <div class="flex flex-wrap gap-4">
+                <span class="px-4 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-bold">PYTHON</span>
+                <span class="px-4 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-bold">SEO MASTERY</span>
+                <span class="px-4 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-bold">AWS CLOUD</span>
+                <span class="px-4 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-bold">JEE ASPIRANT</span>
             </div>
         </div>
     </section>
 
     <section id="experience" class="py-32 px-6 max-w-6xl mx-auto">
-        <h2 class="text-center text-5xl font-black mb-20 tracking-tight">MISSION <span class="gradient-text">LOGS</span></h2>
-        <div class="grid md:grid-cols-2 gap-8">
-            <div class="glass p-8 rounded-3xl neon-border transition">
-                <div class="text-cyan-400 mono text-sm mb-2">01. FOUNDATION</div>
-                <h3 class="text-2xl font-bold mb-4">Likhakriti Brand Deployment</h3>
-                <p class="text-slate-400 text-sm mb-6">Scaled a digital literature ecosystem to 800k+ reads. Ranked Google Page 1 through cold, hard SEO data.</p>
-                <div class="flex space-x-2"><span class="bg-cyan-500/10 text-cyan-400 text-[10px] px-3 py-1 rounded-full border border-cyan-500/20">GROWTH</span></div>
+        <div class="grid md:grid-cols-2 gap-10">
+            <div class="glass p-10 rounded-[2rem] neon-border transition">
+                <h3 class="text-2xl font-black mb-4 uppercase">Likhakriti Brand</h3>
+                <p class="text-slate-400 leading-relaxed">Achieved 800,000+ reads by scaling a content ecosystem through aggressive SEO and targeted social engineering.</p>
             </div>
-            <div class="glass p-8 rounded-3xl neon-border transition">
-                <div class="text-purple-400 mono text-sm mb-2">02. LOGIC</div>
-                <h3 class="text-2xl font-bold mb-4">YRS Lofi Engine</h3>
-                <p class="text-slate-400 text-sm mb-6">Engineered a Python-based audio environment with custom AI sequencing for deep-work focus sessions.</p>
-                <div class="flex space-x-2"><span class="bg-purple-500/10 text-purple-400 text-[10px] px-3 py-1 rounded-full border border-purple-500/20">PYTHON</span></div>
+            <div class="glass p-10 rounded-[2rem] neon-border transition">
+                <h3 class="text-2xl font-black mb-4 uppercase">YRS Lofi Engine</h3>
+                <p class="text-slate-400 leading-relaxed">Built a specialized Python audio logic engine designed for productivity and high-focus study sessions.</p>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="py-32 text-center">
-        <h2 class="text-3xl font-bold mb-8">Ready to build something <span class="gradient-text">Legendary?</span></h2>
-        <a href="mailto:sharma.yash62668@gmail.com" class="bg-white text-black px-10 py-4 rounded-full font-bold hover:bg-cyan-400 transition-all uppercase tracking-widest text-sm">Initiate Protocol</a>
-    </section>
-
-    <footer class="p-10 text-center border-t border-white/5 text-[10px] mono text-slate-600 tracking-[0.5em]">
-        YASHRAJ SHARMA // (C) 2026 // RAIPUR.INDIA
+    <footer class="p-16 text-center text-[10px] mono text-slate-700 tracking-[0.8em]">
+        YASHRAJ SHARMA // RAIPUR.CG // 2026
     </footer>
 
     <script>
-        // Liquid Nitrogen Background Effect
+        // Vanta Net Effect with Amber Tone
         VANTA.NET({
             el: "#canvas-bg",
             mouseControls: true, touchControls: true, gyroControls: false,
             minHeight: 200.00, minWidth: 200.00,
             scale: 1.00, scaleMobile: 1.00,
-            color: 0x00f2ff, backgroundColor: 0x020617,
-            points: 12.00, maxDistance: 24.00, spacing: 16.00
+            color: 0xf59e0b, backgroundColor: 0x020617,
+            points: 10.00, maxDistance: 25.00, spacing: 18.00
         });
 
-        // Typewriter Effect
         new Typed('#typed', {
-            strings: ['Architecting Likhakriti.', 'Optimizing Python Logic.', 'Mastering SEO Algorithms.', 'Preparing for JEE Mastery.'],
-            typeSpeed: 40, backSpeed: 20, loop: true
+            strings: ['Architecting Likhakriti.', 'Optimizing SEO Logic.', 'Developing Python Apps.', 'Chess Strategist // 1390 Elo.'],
+            typeSpeed: 50, backSpeed: 25, loop: true
         });
     </script>
 </body>
-    </html>
-        
+</html>

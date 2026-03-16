@@ -3,61 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yashraj Sharma | Portfolio</title>
+    <title>Yashraj Sharma | Dev & Founder</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Silkscreen&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    
     <style>
-        body { background-color: #0f172a; color: #f8fafc; font-family: 'Inter', sans-serif; }
-        .gradient-text { background: linear-gradient(to right, #818cf8, #c084fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        body {
+            background-color: #050505;
+            color: #e2e8f0;
+            font-family: 'Space Grotesk', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Moving Particle Background */
+        .bg-dots {
+            background-image: radial-gradient(#1e293b 1px, transparent 1px);
+            background-size: 30px 30px;
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            animation: move-bg 20s linear infinite;
+        }
+
+        @keyframes move-bg {
+            from { transform: translateY(0); }
+            to { transform: translateY(30px); }
+        }
+
+        .pixel-font { font-family: 'Silkscreen', cursive; }
+        
+        .neon-text {
+            color: #818cf8;
+            text-shadow: 0 0 10px rgba(129, 140, 248, 0.5);
+        }
+
+        .glass-nav {
+            background: rgba(5, 5, 5, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .social-icon:hover {
+            transform: translateY(-3px);
+            filter: drop-shadow(0 0 8px #818cf8);
+        }
     </style>
 </head>
-<body class="p-8 md:p-24">
-    <nav class="flex justify-between items-center mb-20">
-        <h1 class="text-2xl font-bold tracking-tighter">YASHRAJ<span class="text-indigo-400">.SHARMA</span></h1>
-        <div class="space-x-6 text-sm font-medium text-slate-400">
-            <a href="https://github.com/achlys1" class="hover:text-white">GitHub</a>
-            <a href="https://linkedin.com/in/likhakriti-60251b297" class="hover:text-white">LinkedIn</a>
+<body>
+
+    <div class="bg-dots"></div>
+
+    <nav class="fixed top-0 w-full glass-nav z-50 px-8 py-4 flex justify-between items-center">
+        <div class="pixel-font text-xl tracking-widest neon-text">YASHRAJ</div>
+        <div class="hidden md:flex space-x-8 text-sm uppercase tracking-widest text-slate-400">
+            <a href="#" class="hover:text-indigo-400 transition">Home</a>
+            <a href="#" class="hover:text-indigo-400 transition">About</a>
+            <a href="#" class="hover:text-indigo-400 transition">Experience</a>
+            <a href="#" class="hover:text-indigo-400 transition">Contact</a>
         </div>
     </nav>
 
-    <section class="max-w-4xl mb-32">
-        <h2 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">Founder of <span class="gradient-text">Likhakriti</span> & Python Developer.</h2>
-        <p class="text-xl text-slate-400 leading-relaxed">16-year-old student bridging the gap between creative storytelling and scalable code. Currently mastering AWS and AI/ML while preparing for JEE.</p>
-    </section>
+    <section class="h-screen flex flex-col justify-center items-center text-center px-4">
+        <h1 class="text-4xl md:text-7xl font-bold mb-4 tracking-tight">
+            Hi, I'm <span class="neon-text pixel-font">Yashraj Sharma</span>
+        </h1>
+        
+        <div class="text-xl md:text-3xl text-slate-400 font-light tracking-wide">
+            A 16-year-old <span id="typed-text" class="text-white font-medium"></span> based in India.
+        </div>
 
-    <div class="grid md:grid-cols-2 gap-8 mb-32">
-        <div class="p-8 rounded-2xl bg-slate-900 border border-slate-800 hover:border-indigo-500 transition-all">
-            <h3 class="text-2xl font-bold mb-4">Likhakriti</h3>
-            <p class="text-slate-400 mb-6">Scaled a literary brand to 800k+ reads. Mastered SEO to dominate Google Page 1 search results.</p>
-            <span class="text-xs font-bold uppercase tracking-widest text-indigo-400">Branding • SEO • Growth</span>
-        </div>
-        <div class="p-8 rounded-2xl bg-slate-900 border border-slate-800 hover:border-indigo-500 transition-all">
-            <h3 class="text-2xl font-bold mb-4">YRS Lofi Player</h3>
-            <p class="text-slate-400 mb-6">A Python-based audio environment utilizing AI-driven sequencing logic for productivity.</p>
-            <span class="text-xs font-bold uppercase tracking-widest text-indigo-400">Python • AI Logic • GitHub</span>
-        </div>
-    </div>
-
-    <section class="border-t border-slate-800 pt-16 grid grid-cols-2 md:grid-cols-4 gap-8">
-        <div>
-            <p class="text-3xl font-bold">800K+</p>
-            <p class="text-slate-500 text-sm">Total Reads</p>
-        </div>
-        <div>
-            <p class="text-3xl font-bold">1390</p>
-            <p class="text-slate-500 text-sm">Chess.com Elo</p>
-        </div>
-        <div>
-            <p class="text-3xl font-bold">AWS</p>
-            <p class="text-slate-500 text-sm">Practitioner (In-Prog)</p>
-        </div>
-        <div>
-            <p class="text-3xl font-bold">Page 1</p>
-            <p class="text-slate-500 text-sm">Google Ranking</p>
+        <div class="flex space-x-8 mt-12">
+            <a href="https://github.com/achlys1" class="social-icon transition">
+                <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" class="w-8 invert opacity-80" alt="GitHub">
+            </a>
+            <a href="https://www.linkedin.com/in/likhakriti-60251b297" class="social-icon transition">
+                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" class="w-8 invert opacity-80" alt="LinkedIn">
+            </a>
+            <a href="#" class="social-icon transition">
+                <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" class="w-8 invert opacity-80" alt="Instagram">
+            </a>
         </div>
     </section>
 
-    <footer class="mt-32 text-center text-slate-600 text-sm">
-        Built with logic and poetry. &copy; 2026 Yashraj Sharma
+    <footer class="fixed bottom-8 w-full px-12 flex justify-between items-center text-[10px] uppercase tracking-[0.3em] text-slate-600">
+        <div>Raipur // 1390 Elo</div>
+        <div>Likhakriti // 800k Reads</div>
+        <div>AWS // In-Progress</div>
     </footer>
+
+    <script>
+        var typed = new Typed('#typed-text', {
+            strings: [
+                'Python Developer',
+                'Founder of Likhakriti',
+                'JEE Aspirant',
+                'Chess Strategist',
+                'SEO Specialist'
+            ],
+            typeSpeed: 50,
+            backSpeed: 30,
+            backDelay: 1500,
+            loop: true,
+            cursorChar: '_',
+        });
+    </script>
 </body>
 </html>

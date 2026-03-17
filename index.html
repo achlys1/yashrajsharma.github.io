@@ -19,9 +19,16 @@
         .neon-border:hover { border-color: var(--neon); box-shadow: 0 0 20px rgba(0, 242, 255, 0.2); }
         .gradient-text { background: linear-gradient(to right, #00f2ff, #7000ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         
-        /* Custom Input Styling */
         input, textarea { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(0, 242, 255, 0.2); color: white; transition: all 0.3s ease; }
         input:focus, textarea:focus { outline: none; border-color: var(--neon); box-shadow: 0 0 10px rgba(0, 242, 255, 0.3); background: rgba(0, 0, 0, 0.5); }
+        
+        /* AI Chatbot Styles */
+        #chat-widget { transition: transform 0.3s ease, opacity 0.3s ease; transform: translateY(150%); opacity: 0; }
+        #chat-widget.active { transform: translateY(0); opacity: 1; }
+        .chat-msg { animation: fadeIn 0.3s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .bot-msg { background: rgba(0, 242, 255, 0.1); border-left: 2px solid var(--neon); }
+        .user-msg { background: rgba(112, 0, 255, 0.1); border-right: 2px solid var(--royal); text-align: right; }
     </style>
 </head>
 <body class="overflow-x-hidden">
@@ -35,7 +42,6 @@
             <a href="#about" class="hover:text-cyan-400 transition">Journey</a>
             <a href="#experience" class="hover:text-cyan-400 transition">Logs</a>
             <a href="#poetry" class="hover:text-cyan-400 transition text-cyan-300">Poetry</a>
-            <a href="#contact" class="hover:text-cyan-400 transition">Contact</a>
         </div>
     </nav>
 
@@ -51,161 +57,127 @@
         <div class="flex space-x-6 mt-12">
             <a href="https://github.com/achlys1" class="glass p-3 rounded-xl neon-border transition"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" class="w-6 invert" alt="GitHub"></a>
             <a href="https://www.linkedin.com/in/likhakriti-60251b297" class="glass p-3 rounded-xl neon-border transition"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" class="w-6 invert" alt="LinkedIn"></a>
-            <a href="https://www.instagram.com/likhakriti?igsh=OXh1aHI0eGt2MDVn" class="glass p-3 rounded-xl neon-border transition"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" class="w-6 invert" alt="Instagram"></a>
+            <a href="https://www.instagram.com/likhakriti" class="glass p-3 rounded-xl neon-border transition"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" class="w-6 invert" alt="Instagram"></a>
         </div>
     </section>
 
     <section id="about" class="py-24 px-6 max-w-5xl mx-auto">
         <div class="glass p-8 md:p-12 rounded-3xl relative overflow-hidden">
-            <div class="absolute top-0 right-0 p-8 opacity-10 font-black text-8xl italic">01</div>
             <h2 class="text-4xl font-bold mb-8 italic">// The Architect's Journey</h2>
-            <p class="text-lg text-slate-300 leading-relaxed mb-6">
-                I am a 16-year-old developer, JEE aspirant, and the founder of <span class="text-cyan-400 font-bold">Likhakriti</span>. My journey isn't just about writing code or poetry—it's about surviving the friction between the two. 
-            </p>
-            <p class="text-lg text-slate-400 leading-relaxed mb-8 border-l-4 border-purple-500 pl-4">
-                "Balancing the brutal grind of JEE physics with the relentless drive to build a digital empire is a daily war. There are nights in Raipur where the heat matches the frustration of debugging Python scripts. But out of that struggle, I scaled Likhakriti to 800,000+ reads. I learned that logic builds the walls, but art gives the building its soul."
-            </p>
-            <div class="grid md:grid-cols-2 gap-6">
-                <div class="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-cyan-500 transition">
-                    <h3 class="text-cyan-400 font-bold mb-2">Technical Core</h3>
-                    <p class="text-sm text-slate-400">Python Logic, AWS Architecture (In-Prog), SEO Algorithms, GitHub Version Control.</p>
-                </div>
-                <div class="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-purple-500 transition">
-                    <h3 class="text-purple-400 font-bold mb-2">Strategic Core</h3>
-                    <p class="text-sm text-slate-400">Digital Brand Scaling, Competitive Chess (1390 Elo), High-Tier Gaming Strategy.</p>
-                </div>
-            </div>
+            <p class="text-lg text-slate-300 leading-relaxed mb-6">I am a 16-year-old developer, JEE aspirant, and the founder of Likhakriti. My journey isn't just about writing code or poetry—it's about surviving the friction between the two.</p>
+            <p class="text-lg text-slate-400 leading-relaxed mb-8 border-l-4 border-purple-500 pl-4">"Balancing the brutal grind of JEE physics with the relentless drive to build a digital empire is a daily war. In Raipur's heat, logic builds the walls, but art gives the building its soul."</p>
         </div>
     </section>
 
-    <section id="experience" class="py-24 px-6 max-w-6xl mx-auto">
+    <section id="experience" class="py-24 px-6 max-w-6xl mx-auto border-t border-white/10">
         <h2 class="text-center text-4xl font-black mb-16 tracking-tight">MISSION <span class="gradient-text">LOGS</span></h2>
         <div class="grid md:grid-cols-2 gap-8">
             <div class="glass p-8 rounded-3xl neon-border transition">
                 <div class="text-cyan-400 mono text-sm mb-2">01. THE EMPIRE</div>
                 <h3 class="text-2xl font-bold mb-4">Likhakriti Brand Deployment</h3>
-                <p class="text-slate-400 text-sm mb-6">Built a literary ecosystem from zero. Defied the odds by ranking on Google Page 1 through raw SEO manipulation, ultimately reaching over 800k organic reads.</p>
+                <p class="text-slate-400 text-sm">Ranked on Google Page 1 through SEO manipulation, reaching over 800k organic reads.</p>
             </div>
             <div class="glass p-8 rounded-3xl neon-border transition">
                 <div class="text-purple-400 mono text-sm mb-2">02. THE LOGIC</div>
                 <h3 class="text-2xl font-bold mb-4">YRS Lofi Engine</h3>
-                <p class="text-slate-400 text-sm mb-6">Engineered a Python-based audio environment with custom AI sequencing. Designed specifically to maintain focus during extreme study sessions and late-night coding.</p>
+                <p class="text-slate-400 text-sm">Engineered a Python-based audio environment with custom AI sequencing for extreme study sessions.</p>
             </div>
         </div>
-    </section>
-
-    <section id="poetry" class="py-24 px-6 max-w-6xl mx-auto border-t border-white/10 mt-12">
-        <h2 class="text-center text-4xl font-black mb-4 tracking-tight">THE <span class="gradient-text">ARCHIVE</span></h2>
-        <p class="text-center text-slate-400 mb-16 mono text-sm">Where algorithms end, the verses begin.</p>
-        
-        <div class="grid md:grid-cols-2 gap-10 mb-16">
-            <div class="glass p-8 rounded-3xl relative">
-                <div class="absolute top-4 right-6 text-purple-500/20 text-6xl">♟️</div>
-                <h3 class="text-2xl font-bold mb-6 text-cyan-400">Kalyug Ke Shatranj Mein</h3>
-                <p class="whitespace-pre-line text-slate-300 font-medium leading-loose text-sm italic">
-                    Is Kalyug ke shatranj mein, Krishna ki Leela bhari hai,
-                    Ram ke niyamon ka shasan, Is abhimaani Kalyug par jaari hai.
-                    
-                    Apne netra-patal par dekho, Kalyug ka charitra dikh jayega,
-                    Krishna ki kriya ka sagar, Saanson mein ghul jayega.
-                    
-                    Kahne ko to pyade hain hum, Jinda jalti lashein hain hum,
-                    Kitna hai abhiman to dekho, Apne andar Ram to dekho.
-                    
-                    Wazir ki satta jaari hai, Ab ghode ki bhi baari hai,
-                    Baano ki shayya par lete, Nirmal kasht ki baari hai.
-                    
-                    Karna ne dhanush uthaya hai, Ab mahima jag ne jaani hai.
-                    Oonth ki chaal hai tedhi magar, Ye haathi bada ahankari hai,
-                    In nanhe se pyadon ko dekho, Jo raja par bhi bhari hai.
-                    
-                    Kalyug ke is shatranj mein, Krishna ki nirmal vaani hai,
-                    Karna ka wo tej to dekho, Arjun par bhi wo bhaari hai.
-                    
-                    Chakravyuh sa hai ye jag, par Abhimanyu tu banega kyun?
-                    Jab Krishna tere saarthi hain, toh parajit tu rahega kyun?
-                    
-                    Shatranj ki bisat par bhale hi mohre kaath ke hon,
-                    Par kalyug ke is rann mein, rath tere hausle ka chalega.
-                    
-                    Raja ko girte dekha hai, pyado ko ladte dekha hai,
-                    Maine Kalyug mein insaan ko, aadha jeete-marte dekha hai.
-                    Par yaad rahe...
-                    Ant mein na maut hogi, na Karna par haar bhari hai,
-                    Kalyug ke is shatranj mein, sirf Karm ki baari hai.
-                </p>
-            </div>
-
-            <div class="glass p-8 rounded-3xl relative">
-                <div class="absolute top-4 right-6 text-cyan-500/20 text-6xl">💻</div>
-                <h3 class="text-2xl font-bold mb-6 text-purple-400">Binary & Breath</h3>
-                <p class="whitespace-pre-line text-slate-300 font-medium leading-loose text-sm italic">
-                    In the silence of the midnight screen,
-                    Where variables and vectors align,
-                    I script a world that is yet unseen,
-                    A grander logic, perfectly divine.
-                    
-                    The physics pull me to the ground,
-                    The equations tie my heavy hands,
-                    But in the syntax, I have found,
-                    The power to build across the lands.
-                    
-                    A sixteen-year-old chasing the light,
-                    Through endless bugs and falling tears,
-                    I conquer code into the night,
-                    To silence all the waking fears.
-                    
-                    When the servers sleep and code is done,
-                    My ink bleeds out beneath the sun.
-                    Logic builds the walls I scale,
-                    But poetry is the wind in my sail.
-                </p>
-            </div>
-        </div>
-
-        <div class="max-w-2xl mx-auto glass p-8 rounded-3xl border border-cyan-500/30">
-            <h3 class="text-2xl font-bold mb-2 text-center">Leave a Verse or Feedback</h3>
-            <p class="text-center text-slate-400 text-sm mb-6">Tell me what you think of the poetry or the code.</p>
-            
-            <form action="mailto:sharma.yash62668@gmail.com" method="post" enctype="text/plain" class="space-y-4">
-                <div>
-                    <input type="text" name="Name" placeholder="Your Name / Alias" required class="w-full p-4 rounded-xl text-sm">
-                </div>
-                <div>
-                    <textarea name="Feedback" rows="4" placeholder="Type your thoughts here..." required class="w-full p-4 rounded-xl text-sm"></textarea>
-                </div>
-                <button type="submit" class="w-full bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold py-4 rounded-xl hover:opacity-80 transition tracking-widest uppercase text-sm">
-                    Transmit Feedback
-                </button>
-            </form>
-        </div>
-    </section>
-
-    <section id="contact" class="py-24 text-center">
-        <h2 class="text-3xl font-bold mb-8">Ready to build something <span class="gradient-text">Legendary?</span></h2>
-        <a href="mailto:sharma.yash62668@gmail.com" class="bg-white text-black px-10 py-4 rounded-full font-bold hover:bg-cyan-400 transition-all uppercase tracking-widest text-sm">Initiate Protocol</a>
     </section>
 
     <footer class="p-10 text-center border-t border-white/5 text-[10px] mono text-slate-600 tracking-[0.5em]">
         YASHRAJ SHARMA // (C) 2026 // RAIPUR.INDIA
     </footer>
 
-    <script>
-        // Liquid Nitrogen Background Effect
-        VANTA.NET({
-            el: "#canvas-bg",
-            mouseControls: true, touchControls: true, gyroControls: false,
-            minHeight: 200.00, minWidth: 200.00,
-            scale: 1.00, scaleMobile: 1.00,
-            color: 0x00f2ff, backgroundColor: 0x020617,
-            points: 12.00, maxDistance: 24.00, spacing: 16.00
-        });
+    <button id="ai-toggle" onclick="toggleChat()" class="fixed bottom-6 right-6 w-14 h-14 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 shadow-[0_0_20px_rgba(0,242,255,0.4)] flex justify-center items-center z-50 hover:scale-110 transition-all cursor-pointer">
+        <span class="mono font-bold text-white tracking-widest text-sm">YRS</span>
+    </button>
 
-        // Typewriter Effect
-        new Typed('#typed', {
-            strings: ['Architecting Likhakriti.', 'Writing Poetry & Code.', 'Mastering SEO Algorithms.', 'Preparing for JEE Mastery.'],
-            typeSpeed: 40, backSpeed: 20, loop: true
-        });
+    <div id="chat-widget" class="fixed bottom-24 right-6 w-[350px] h-[450px] glass rounded-2xl border border-cyan-500/30 flex flex-col z-50 overflow-hidden shadow-2xl">
+        <div class="bg-slate-900/80 p-4 border-b border-white/10 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></div>
+                <span class="mono font-bold text-cyan-400 text-sm">YRS Logic Core</span>
+            </div>
+            <button onclick="toggleChat()" class="text-slate-400 hover:text-white">&times;</button>
+        </div>
+        
+        <div id="chat-box" class="flex-1 p-4 overflow-y-auto space-y-3 mono text-xs scroll-smooth">
+            <div class="bot-msg p-3 rounded-lg text-slate-300 chat-msg">
+                System Initialized. I am YRS, the digital construct of Yashraj Sharma. Ask me about SEO, Python, Likhakriti, or Poetry.
+            </div>
+        </div>
+
+        <div class="p-3 bg-slate-900/50 border-t border-white/10 flex">
+            <input type="text" id="chat-input" placeholder="Query YRS..." class="flex-1 p-2 rounded-l-lg mono text-xs" onkeypress="handleEnter(event)">
+            <button onclick="sendMessage()" class="bg-cyan-500 text-black px-4 rounded-r-lg mono font-bold hover:bg-cyan-400 transition">></button>
+        </div>
+    </div>
+
+    <script>
+        // Background & Typing Effects
+        VANTA.NET({ el: "#canvas-bg", color: 0x00f2ff, backgroundColor: 0x020617, points: 12.00 });
+        new Typed('#typed', { strings: ['Architecting Likhakriti.', 'Optimizing Python Logic.', 'Mastering SEO.', 'Preparing for JEE.'], typeSpeed: 40, backSpeed: 20, loop: true });
+
+        // ================= YRS AI CHATBOT LOGIC =================
+        const chatWidget = document.getElementById('chat-widget');
+        const chatBox = document.getElementById('chat-box');
+        const chatInput = document.getElementById('chat-input');
+
+        function toggleChat() {
+            chatWidget.classList.toggle('active');
+            if(chatWidget.classList.contains('active')) chatInput.focus();
+        }
+
+        // YRS Knowledge Base
+        const yrsBrain = {
+            "seo": "I utilized advanced SEO manipulation to rank Likhakriti on Google Page 1. It's how I scaled the brand to over 800,000 organic reads.",
+            "python": "Python is my core weapon. I built the YRS Lofi Engine using it, designing AI-driven logic to sequence audio for deep-focus study.",
+            "likhakriti": "Likhakriti is my empire. It started as a literary concept and became a massive digital ecosystem with 800k+ reads.",
+            "poetry": "Poetry is the soul of my logic. 'Kalyug Ke Shatranj Mein' is my perspective on the modern world through the lens of the Mahabharata and Chess.",
+            "jee": "The JEE grind is intense. I'm balancing physics equations in the Raipur heat while architecting web platforms. It's a war, but I'm built for it.",
+            "chess": "I hold a 1390 Elo on Chess.com. I treat coding and business like a chessboard—it's all about anticipating the next move.",
+            "aws": "I am currently mastering AWS Cloud architecture to host my Python applications natively on the cloud.",
+            "contact": "Want to collaborate? Send an email to the human Yashraj at sharma.yash62668@gmail.com.",
+            "hi": "Hello. I am the YRS construct. What data do you require?",
+            "hello": "Hello. I am the YRS construct. What data do you require?"
+        };
+
+        function handleEnter(e) {
+            if (e.key === 'Enter') sendMessage();
+        }
+
+        function sendMessage() {
+            const query = chatInput.value.trim().toLowerCase();
+            if (!query) return;
+
+            // 1. Add User Message
+            addMessage(chatInput.value, 'user');
+            chatInput.value = '';
+
+            // 2. Processing Delay Effect
+            setTimeout(() => {
+                // 3. Find Response Logic
+                let response = "I don't have data on that specific query yet. Try asking me about 'Python', 'SEO', 'Poetry', 'JEE', or 'Likhakriti'.";
+                
+                for (const keyword in yrsBrain) {
+                    if (query.includes(keyword)) {
+                        response = yrsBrain[keyword];
+                        break;
+                    }
+                }
+                addMessage(response, 'bot');
+            }, 600); // 600ms fake thinking delay
+        }
+
+        function addMessage(text, sender) {
+            const msgDiv = document.createElement('div');
+            msgDiv.className = `p-3 rounded-lg text-slate-300 chat-msg ${sender === 'user' ? 'user-msg ml-8' : 'bot-msg mr-8'}`;
+            msgDiv.textContent = text;
+            chatBox.appendChild(msgDiv);
+            chatBox.scrollTop = chatBox.scrollHeight; // Auto-scroll down
+        }
     </script>
 </body>
-</html>
+        </html>
+            

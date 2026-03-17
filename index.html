@@ -12,12 +12,16 @@
     
     <style>
         :root { --neon: #00f2ff; --royal: #7000ff; }
-        body { background-color: #020617; color: #f8fafc; font-family: 'Plus Jakarta Sans', sans-serif; }
+        body { background-color: #020617; color: #f8fafc; font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
         .mono { font-family: 'Space Mono', monospace; }
         #canvas-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; opacity: 0.6; }
         .glass { background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.1); }
         .neon-border:hover { border-color: var(--neon); box-shadow: 0 0 20px rgba(0, 242, 255, 0.2); }
         .gradient-text { background: linear-gradient(to right, #00f2ff, #7000ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        /* Custom Input Styling */
+        input, textarea { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(0, 242, 255, 0.2); color: white; transition: all 0.3s ease; }
+        input:focus, textarea:focus { outline: none; border-color: var(--neon); box-shadow: 0 0 10px rgba(0, 242, 255, 0.3); background: rgba(0, 0, 0, 0.5); }
     </style>
 </head>
 <body class="overflow-x-hidden">
@@ -26,10 +30,11 @@
 
     <nav class="fixed top-0 w-full glass z-50 px-6 py-4 flex justify-between items-center border-b border-white/5">
         <div class="text-2xl font-extrabold tracking-tighter gradient-text">LIKHAKRITI<span class="text-white">.OS</span></div>
-        <div class="hidden md:flex space-x-10 text-[11px] uppercase tracking-[0.2em] font-semibold">
+        <div class="hidden md:flex space-x-8 text-[11px] uppercase tracking-[0.2em] font-semibold">
             <a href="#home" class="hover:text-cyan-400 transition">Start</a>
-            <a href="#about" class="hover:text-cyan-400 transition">About</a>
-            <a href="#experience" class="hover:text-cyan-400 transition">Experience</a>
+            <a href="#about" class="hover:text-cyan-400 transition">Journey</a>
+            <a href="#experience" class="hover:text-cyan-400 transition">Logs</a>
+            <a href="#poetry" class="hover:text-cyan-400 transition text-cyan-300">Poetry</a>
             <a href="#contact" class="hover:text-cyan-400 transition">Contact</a>
         </div>
     </nav>
@@ -50,45 +55,133 @@
         </div>
     </section>
 
-    <section id="about" class="py-32 px-6 max-w-5xl mx-auto">
-        <div class="glass p-12 rounded-3xl relative overflow-hidden">
+    <section id="about" class="py-24 px-6 max-w-5xl mx-auto">
+        <div class="glass p-8 md:p-12 rounded-3xl relative overflow-hidden">
             <div class="absolute top-0 right-0 p-8 opacity-10 font-black text-8xl italic">01</div>
-            <h2 class="text-4xl font-bold mb-8 italic">// The Architect</h2>
-            <p class="text-xl text-slate-300 leading-relaxed mb-6">
-                I am a 16-year-old developer and brand strategist currently decoding the intersection of **Artificial Intelligence** and **Creative Literature**. While the rest of the world sees stories, I see data structures and SEO algorithms.
+            <h2 class="text-4xl font-bold mb-8 italic">// The Architect's Journey</h2>
+            <p class="text-lg text-slate-300 leading-relaxed mb-6">
+                I am a 16-year-old developer, JEE aspirant, and the founder of <span class="text-cyan-400 font-bold">Likhakriti</span>. My journey isn't just about writing code or poetry—it's about surviving the friction between the two. 
             </p>
-            <div class="grid md:grid-cols-2 gap-6 mt-12">
-                <div class="p-6 rounded-2xl bg-white/5 border border-white/10">
+            <p class="text-lg text-slate-400 leading-relaxed mb-8 border-l-4 border-purple-500 pl-4">
+                "Balancing the brutal grind of JEE physics with the relentless drive to build a digital empire is a daily war. There are nights in Raipur where the heat matches the frustration of debugging Python scripts. But out of that struggle, I scaled Likhakriti to 800,000+ reads. I learned that logic builds the walls, but art gives the building its soul."
+            </p>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-cyan-500 transition">
                     <h3 class="text-cyan-400 font-bold mb-2">Technical Core</h3>
-                    <p class="text-sm text-slate-400">Python, AWS (In-Prog), AI Logic, Git Ops.</p>
+                    <p class="text-sm text-slate-400">Python Logic, AWS Architecture (In-Prog), SEO Algorithms, GitHub Version Control.</p>
                 </div>
-                <div class="p-6 rounded-2xl bg-white/5 border border-white/10">
+                <div class="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-purple-500 transition">
                     <h3 class="text-purple-400 font-bold mb-2">Strategic Core</h3>
-                    <p class="text-sm text-slate-400">SEO Mastery, Brand Scaling, Chess Strategy (1390 Elo).</p>
+                    <p class="text-sm text-slate-400">Digital Brand Scaling, Competitive Chess (1390 Elo), High-Tier Gaming Strategy.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="experience" class="py-32 px-6 max-w-6xl mx-auto">
-        <h2 class="text-center text-5xl font-black mb-20 tracking-tight">MISSION <span class="gradient-text">LOGS</span></h2>
+    <section id="experience" class="py-24 px-6 max-w-6xl mx-auto">
+        <h2 class="text-center text-4xl font-black mb-16 tracking-tight">MISSION <span class="gradient-text">LOGS</span></h2>
         <div class="grid md:grid-cols-2 gap-8">
             <div class="glass p-8 rounded-3xl neon-border transition">
-                <div class="text-cyan-400 mono text-sm mb-2">01. FOUNDATION</div>
+                <div class="text-cyan-400 mono text-sm mb-2">01. THE EMPIRE</div>
                 <h3 class="text-2xl font-bold mb-4">Likhakriti Brand Deployment</h3>
-                <p class="text-slate-400 text-sm mb-6">Scaled a digital literature ecosystem to 800k+ reads. Ranked Google Page 1 through cold, hard SEO data.</p>
-                <div class="flex space-x-2"><span class="bg-cyan-500/10 text-cyan-400 text-[10px] px-3 py-1 rounded-full border border-cyan-500/20">GROWTH</span></div>
+                <p class="text-slate-400 text-sm mb-6">Built a literary ecosystem from zero. Defied the odds by ranking on Google Page 1 through raw SEO manipulation, ultimately reaching over 800k organic reads.</p>
             </div>
             <div class="glass p-8 rounded-3xl neon-border transition">
-                <div class="text-purple-400 mono text-sm mb-2">02. LOGIC</div>
+                <div class="text-purple-400 mono text-sm mb-2">02. THE LOGIC</div>
                 <h3 class="text-2xl font-bold mb-4">YRS Lofi Engine</h3>
-                <p class="text-slate-400 text-sm mb-6">Engineered a Python-based audio environment with custom AI sequencing for deep-work focus sessions.</p>
-                <div class="flex space-x-2"><span class="bg-purple-500/10 text-purple-400 text-[10px] px-3 py-1 rounded-full border border-purple-500/20">PYTHON</span></div>
+                <p class="text-slate-400 text-sm mb-6">Engineered a Python-based audio environment with custom AI sequencing. Designed specifically to maintain focus during extreme study sessions and late-night coding.</p>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="py-32 text-center">
+    <section id="poetry" class="py-24 px-6 max-w-6xl mx-auto border-t border-white/10 mt-12">
+        <h2 class="text-center text-4xl font-black mb-4 tracking-tight">THE <span class="gradient-text">ARCHIVE</span></h2>
+        <p class="text-center text-slate-400 mb-16 mono text-sm">Where algorithms end, the verses begin.</p>
+        
+        <div class="grid md:grid-cols-2 gap-10 mb-16">
+            <div class="glass p-8 rounded-3xl relative">
+                <div class="absolute top-4 right-6 text-purple-500/20 text-6xl">♟️</div>
+                <h3 class="text-2xl font-bold mb-6 text-cyan-400">Kalyug Ke Shatranj Mein</h3>
+                <p class="whitespace-pre-line text-slate-300 font-medium leading-loose text-sm italic">
+                    Is Kalyug ke shatranj mein, Krishna ki Leela bhari hai,
+                    Ram ke niyamon ka shasan, Is abhimaani Kalyug par jaari hai.
+                    
+                    Apne netra-patal par dekho, Kalyug ka charitra dikh jayega,
+                    Krishna ki kriya ka sagar, Saanson mein ghul jayega.
+                    
+                    Kahne ko to pyade hain hum, Jinda jalti lashein hain hum,
+                    Kitna hai abhiman to dekho, Apne andar Ram to dekho.
+                    
+                    Wazir ki satta jaari hai, Ab ghode ki bhi baari hai,
+                    Baano ki shayya par lete, Nirmal kasht ki baari hai.
+                    
+                    Karna ne dhanush uthaya hai, Ab mahima jag ne jaani hai.
+                    Oonth ki chaal hai tedhi magar, Ye haathi bada ahankari hai,
+                    In nanhe se pyadon ko dekho, Jo raja par bhi bhari hai.
+                    
+                    Kalyug ke is shatranj mein, Krishna ki nirmal vaani hai,
+                    Karna ka wo tej to dekho, Arjun par bhi wo bhaari hai.
+                    
+                    Chakravyuh sa hai ye jag, par Abhimanyu tu banega kyun?
+                    Jab Krishna tere saarthi hain, toh parajit tu rahega kyun?
+                    
+                    Shatranj ki bisat par bhale hi mohre kaath ke hon,
+                    Par kalyug ke is rann mein, rath tere hausle ka chalega.
+                    
+                    Raja ko girte dekha hai, pyado ko ladte dekha hai,
+                    Maine Kalyug mein insaan ko, aadha jeete-marte dekha hai.
+                    Par yaad rahe...
+                    Ant mein na maut hogi, na Karna par haar bhari hai,
+                    Kalyug ke is shatranj mein, sirf Karm ki baari hai.
+                </p>
+            </div>
+
+            <div class="glass p-8 rounded-3xl relative">
+                <div class="absolute top-4 right-6 text-cyan-500/20 text-6xl">💻</div>
+                <h3 class="text-2xl font-bold mb-6 text-purple-400">Binary & Breath</h3>
+                <p class="whitespace-pre-line text-slate-300 font-medium leading-loose text-sm italic">
+                    In the silence of the midnight screen,
+                    Where variables and vectors align,
+                    I script a world that is yet unseen,
+                    A grander logic, perfectly divine.
+                    
+                    The physics pull me to the ground,
+                    The equations tie my heavy hands,
+                    But in the syntax, I have found,
+                    The power to build across the lands.
+                    
+                    A sixteen-year-old chasing the light,
+                    Through endless bugs and falling tears,
+                    I conquer code into the night,
+                    To silence all the waking fears.
+                    
+                    When the servers sleep and code is done,
+                    My ink bleeds out beneath the sun.
+                    Logic builds the walls I scale,
+                    But poetry is the wind in my sail.
+                </p>
+            </div>
+        </div>
+
+        <div class="max-w-2xl mx-auto glass p-8 rounded-3xl border border-cyan-500/30">
+            <h3 class="text-2xl font-bold mb-2 text-center">Leave a Verse or Feedback</h3>
+            <p class="text-center text-slate-400 text-sm mb-6">Tell me what you think of the poetry or the code.</p>
+            
+            <form action="mailto:sharma.yash62668@gmail.com" method="post" enctype="text/plain" class="space-y-4">
+                <div>
+                    <input type="text" name="Name" placeholder="Your Name / Alias" required class="w-full p-4 rounded-xl text-sm">
+                </div>
+                <div>
+                    <textarea name="Feedback" rows="4" placeholder="Type your thoughts here..." required class="w-full p-4 rounded-xl text-sm"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold py-4 rounded-xl hover:opacity-80 transition tracking-widest uppercase text-sm">
+                    Transmit Feedback
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 text-center">
         <h2 class="text-3xl font-bold mb-8">Ready to build something <span class="gradient-text">Legendary?</span></h2>
         <a href="mailto:sharma.yash62668@gmail.com" class="bg-white text-black px-10 py-4 rounded-full font-bold hover:bg-cyan-400 transition-all uppercase tracking-widest text-sm">Initiate Protocol</a>
     </section>
@@ -110,10 +203,9 @@
 
         // Typewriter Effect
         new Typed('#typed', {
-            strings: ['Architecting Likhakriti.', 'Optimizing Python Logic.', 'Mastering SEO Algorithms.', 'Preparing for JEE Mastery.'],
+            strings: ['Architecting Likhakriti.', 'Writing Poetry & Code.', 'Mastering SEO Algorithms.', 'Preparing for JEE Mastery.'],
             typeSpeed: 40, backSpeed: 20, loop: true
         });
     </script>
 </body>
-                    </html>
-    
+</html>
